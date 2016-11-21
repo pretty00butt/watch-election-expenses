@@ -28,6 +28,10 @@
             </div>
           </div>
         </div>
+        <div>
+          <button type="button" v-on:click="getPeople">search</button>
+          <button type="button" v-on:click="getMorePeople">more</button>
+        </div>
       </form>
     </div>
     <div class="labels row">
@@ -50,8 +54,25 @@
 </template>
 
 <script>
+  import { mapActions } from 'vuex'
+  import store from '../store'
   export default {
     name: 'searchbar',
+    methods: {
+      getPeople() {
+        store.dispatch('getPeople', {
+          region: 'seoul'
+        })
+      },
+      ...mapActions([
+        'getMorePeople'
+      ])
+    },
+    // vuex: {
+    //   actions: {
+    //     getPeople
+    //   }
+    // },
     data() {
       return {
         regions: [{ id: '', name: '지역을 선택하세요', disabled: true, selected: true }, { id: '서울', name: '서울' }],

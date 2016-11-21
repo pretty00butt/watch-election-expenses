@@ -1,5 +1,9 @@
-export default {
-  getProducts (cb) {
-    setTimeout(() => cb([{name: 'jang'}, {name: 'cho'}]), 100);
-  },
+import Vue from 'vue'
+
+export const getPeople = params => {
+  return Vue.http.get('/')
+}
+
+export const getAPerson = personId => {
+  return Vue.http.get('/')
 }

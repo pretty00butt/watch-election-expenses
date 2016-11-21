@@ -1,13 +1,11 @@
-import Main from './components/main';
+import Main from './components/main'
+import Person from './components/person'
 
-const Test = {
-  template: '<div>sss</div>',
-};
 
 export default [{
   path: '/',
-  component: Main,
+  component: Main
 }, {
-  path: '/test',
-  component: Test,
-}];
+  path: '/people/:id',
+  component: Person
+}]
